@@ -1,5 +1,3 @@
-// assets/Theme.js
-
 const Theme = {
     // Pindahkan state ke dalam objek
     currentTheme: localStorage.getItem('theme') || 'system',

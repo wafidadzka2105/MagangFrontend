@@ -10,7 +10,7 @@ const Utils = (() => {
         const crudActive = activePage === 'crud' ? 'bg-gray-900 text-white dark:bg-gray-700' : '';
 
         const navbarHTML = `
-            <nav class="bg-white dark:bg-gray-800 shadow-md">
+            <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between h-16">
                         <div class="flex items-center">
@@ -68,7 +68,7 @@ const Utils = (() => {
         document.querySelectorAll('.theme-switcher').forEach(button => {
             button.addEventListener('click', (e) => Theme.changeTheme(e.currentTarget.dataset.theme));
         });
-        // Ensure theme buttons are styled correctly after render
+        // Panggil applyTheme setelah render untuk memastikan style tombol benar
         Theme.applyTheme(); 
     };
     
