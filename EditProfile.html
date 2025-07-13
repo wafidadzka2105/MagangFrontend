@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profil - Aksamedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
+
+    <header id="navbar-placeholder"></header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white dark:bg-gray-800 shadow rounded-lg mb-6">
+            <div class="px-4 py-5 sm:px-6">
+                <h1 class="text-3xl font-bold leading-tight">Edit Profil</h1>
+            </div>
+        </div>
+        <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+            <form id="profile-form">
+                <div class="mb-4">
+                    <label for="profile-fullname" class="block text-sm font-medium mb-1">Nama Lengkap</label>
+                    <input type="text" id="profile-fullname" class="w-full p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <p id="profile-success" class="text-green-500 text-sm mb-4 text-center hidden"></p>
+                <button type="submit" class="w-full bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">Simpan Perubahan</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="./assets/Auth.js" defer></script>
+    <script src="./assets/Theme.js" defer></script>
+    <script src="./assets/Utils.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.checkAuth();
+            Utils.renderNavbar();
+            Utils.initProfileForm();
+        });
+    </script>
+</body>
+</html>

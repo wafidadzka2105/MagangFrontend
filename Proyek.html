@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Proyek - Aksamedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
+
+    <header id="navbar-placeholder"></header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white dark:bg-gray-800 shadow rounded-lg mb-8">
+            <div class="px-4 py-5 sm:px-6">
+                <h1 class="text-3xl font-bold leading-tight">Proyek Kami</h1>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Berikut adalah beberapa proyek yang telah kami kerjakan.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col group">
+                <div class="bg-gray-200 dark:bg-gray-700 h-48 flex items-center justify-center">
+                    <img src="./assets/img/TokoMAs.png" alt="Tampilan Proyek Hotel El Gangsing" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Web Toko Emas</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 flex-grow">Sebuah platform e-commerce yang dirancang khusus untuk penjualan perhiasan emas secara online.</p>
+                    <a href="https://proyek3webtokoemas.github.io/FEPROYEK1/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-center bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300 group-hover:scale-105 transform">
+                        Lihat Proyek
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col group">
+                 <div class="h-48 w-full overflow-hidden">
+                    <img src="./assets/img/Hotel Pos.png" alt="Tampilan Proyek Hotel El Gangsing" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
+             </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Hotel El Gangsing</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 flex-grow">Website profil dan sistem pemesanan kamar untuk Hotel El Gangsing dengan tampilan yang elegan.</p>
+                    <a href="https://poshotelelgasing.github.io/HotelElGasing.github.io/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-center bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                        Lihat Proyek
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col group">
+                <div class="bg-gray-200 dark:bg-gray-700 h-48 flex items-center justify-center">
+                    <img src="./assets/img/Satsetin.png" alt="Tampilan Proyek Hotel El Gangsing" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Satsetin</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 flex-grow">Landing page modern untuk layanan atau produk digital yang mengutamakan kecepatan dan efisiensi.</p>
+                    <a href="https://satsetin.github.io/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-center bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300 group-hover:scale-105 transform">
+                        Lihat Proyek
+                    </a>
+                </div>
+            </div>
+
+             <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col group">
+                <div class="bg-gray-200 dark:bg-gray-700 h-48 flex items-center justify-center">
+                    <img src="./assets/img/WebPelajaran.png" alt="Tampilan Proyek Hotel El Gangsing" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">WebPelajaran</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 flex-grow">Website Peran Mahasiswa dalam Edukasi Teknologi untuk Masyarakat</p>
+                    <a href="https://wafidadzka2105.github.io/WebPelajaran/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-center bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300 group-hover:scale-105 transform">
+                        Lihat Proyek
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./assets/Auth.js" defer></script>
+    <script src="./assets/Theme.js" defer></script>
+    <script src="./assets/Utils.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.checkAuth();
+            Utils.renderNavbar(); // Navbar akan dimuat tanpa ada menu yang aktif secara spesifik
+        });
+    </script>
+</body>
+</html>

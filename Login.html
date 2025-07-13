@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Aksamedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+
+    <main class="min-h-screen flex items-center justify-center p-4">
+        <div class="max-w-md w-full bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-6">Login</h2>
+            <form id="login-form">
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Username</label>
+                    <input type="text" id="username" value="aksamedia" class="w-full p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <div class="mb-6">
+                    <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Password</label>
+                    <input type="password" id="password" value="password123" class="w-full p-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <p id="login-error" class="text-red-500 text-sm mb-4 text-center hidden"></p>
+                <button type="submit" class="w-full bg-indigo-600 text-white p-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300">Login</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="./assets/Auth.js" defer></script>
+    <script src="./assets/Theme.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // If already logged in, redirect to dashboard
+            if (Auth.isLoggedIn()) {
+                window.location.href = 'Dashboard.html';
+            }
+            
+            // Initialize login form
+            Auth.initLoginForm();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Tertunda - Aksamedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
+
+    <header id="navbar-placeholder"></header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white dark:bg-gray-800 shadow rounded-lg mb-8">
+            <div class="px-4 py-5 sm:px-6">
+                <h1 class="text-3xl font-bold leading-tight">Proyek Tertunda</h1>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Beberapa proyek yang sedang dalam antrean pengembangan kami.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col group opacity-70">
+                <div class="bg-gray-200 dark:bg-gray-700 h-48 flex items-center justify-center">
+                   <img src="./assets/img/.png" alt="Tampilan Proyek Hotel El Gangsing" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Sistem Simpan Pinjam</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 flex-grow">Aplikasi untuk manajemen koperasi simpan pinjam, mencakup data anggota, transaksi, dan pelaporan.</p>
+                    <button disabled class="mt-6 inline-block text-center bg-gray-400 dark:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg cursor-not-allowed">
+                        Segera Hadir 🚧
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col group opacity-70">
+                <div class="bg-gray-200 dark:bg-gray-700 h-48 flex items-center justify-center">
+                    <img src="./assets/img/WebWisata.png" alt="Tampilan Proyek Hotel El Gangsing" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Web Wisata</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 flex-grow">Portal informasi destinasi wisata di Indonesia, lengkap dengan galeri, peta, dan ulasan pengguna.</p>
+                     <button disabled class="mt-6 inline-block text-center bg-gray-400 dark:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg cursor-not-allowed">
+                        Segera Hadir 🏗️
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="./assets/Auth.js" defer></script>
+    <script src="./assets/Theme.js" defer></script>
+    <script src="./assets/Utils.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.checkAuth();
+            Utils.renderNavbar();
+        });
+    </script>
+</body>
+</html>
+```
