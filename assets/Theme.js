@@ -1,64 +1,52 @@
-const Theme = (() => {
-    // 1. Inisialisasi State
-    // Mengambil tema dari Local Storage. Jika tidak ada, default-nya adalah 'system'.
-    let currentTheme = localStorage.getItem('theme') || 'system';
+// assets/Theme.js
+
+const Theme = {
+    // Pindahkan state ke dalam objek
+    currentTheme: localStorage.getItem('theme') || 'system',
 
     /**
-     * Menerapkan tema ke seluruh dokumen berdasarkan state `currentTheme`.
-     * Fungsi ini adalah inti dari logika tampilan.
+     * Menerapkan tema ke seluruh dokumen.
      */
-    const applyTheme = () => {
-        // Tentukan apakah mode gelap harus aktif.
-        // Kondisinya: (pilihan adalah 'dark') ATAU (pilihan adalah 'system' DAN OS dalam mode gelap)
-        const isDarkMode = currentTheme === 'dark' ||
-                           (currentTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    applyTheme: function() {
+        const isDarkMode = this.currentTheme === 'dark' ||
+                           (this.currentTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
         
-        // Terapkan atau hapus class 'dark' pada tag <html> untuk mengaktifkan style dark mode Tailwind.
         document.documentElement.classList.toggle('dark', isDarkMode);
         
-        // Perbarui juga style tombol tema yang sedang aktif di navbar.
         document.querySelectorAll('.theme-switcher').forEach(btn => {
             if (btn) {
-                btn.classList.toggle('bg-indigo-600', btn.dataset.theme === currentTheme);
-                btn.classList.toggle('text-white', btn.dataset.theme === currentTheme);
+                btn.classList.toggle('bg-indigo-600', btn.dataset.theme === this.currentTheme);
+                btn.classList.toggle('text-white', btn.dataset.theme === this.currentTheme);
             }
         });
-    };
+        console.log(`🎨 Tema diterapkan: ${this.currentTheme} (Mode gelap: ${isDarkMode})`);
+    },
 
     /**
-     * Mengubah tema saat pengguna menekan tombol pilihan tema.
-     * @param {string} theme - Pilihan tema baru ('light', 'dark', atau 'system').
+     * Mengubah tema saat pengguna menekan tombol.
      */
-    const changeTheme = (theme) => {
-        currentTheme = theme;
-        localStorage.setItem('theme', theme); // Simpan pilihan baru ke Local Storage agar persisten.
-        applyTheme(); // Langsung terapkan tema yang baru dipilih.
-    };
+    changeTheme: function(theme) {
+        console.log(`🖱️ Tombol tema diklik: ${theme}`);
+        this.currentTheme = theme;
+        localStorage.setItem('theme', theme);
+        this.applyTheme();
+    },
 
     /**
-     * Fungsi inisialisasi yang dijalankan sekali saat skrip dimuat.
+     * Fungsi inisialisasi untuk dijalankan dari halaman HTML.
      */
-    const init = () => {
-        // Langsung terapkan tema yang benar saat halaman pertama kali dibuka.
-        applyTheme();
+    init: function() {
+        console.log("🚀 Theme.js diinisialisasi.");
+        this.applyTheme();
 
-        // 2. Listener untuk Perubahan OS
-        // Tambahkan "pendengar" untuk mendeteksi jika pengguna mengubah tema di level OS.
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            // Penting: Hanya bereaksi dan menerapkan tema baru jika pilihan di web adalah 'system'.
-            if (currentTheme === 'system') {
-                applyTheme();
+            console.log("💻 Deteksi perubahan tema OS...");
+            if (this.currentTheme === 'system') {
+                console.log("... Mode 'system' aktif, menerapkan perubahan.");
+                this.applyTheme();
+            } else {
+                console.log("... Mode bukan 'system', diabaikan.");
             }
         });
-    };
-    
-    // Jalankan fungsi inisialisasi.
-    init();
-
-    // 3. Ekpos Fungsi
-    // Hanya fungsi yang perlu diakses dari luar yang diekspos.
-    return {
-        changeTheme,
-        applyTheme
-    };
-})();
+    }
+};

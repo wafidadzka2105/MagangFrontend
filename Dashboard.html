@@ -71,17 +71,18 @@
         </div>
     </main>
     
-    <script src="./assets/Auth.js" defer></script>
-    <script src="./assets/Theme.js" defer></script>
-    <script src="./assets/Utils.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            Auth.checkAuth();
-            Utils.renderNavbar('dashboard');
-            
-            const user = Auth.getUser();
-            document.getElementById('dashboard-user-name').textContent = user.fullName;
-        });
-    </script>
+<script src="./assets/Auth.js" defer></script>
+<script src="./assets/Theme.js" defer></script> <script src="./assets/Utils.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Urutan ini sekarang sangat penting
+        Auth.checkAuth();      // 1. Cek login dulu
+        Theme.init();          // 2. Inisialisasi tema
+        Utils.renderNavbar('dashboard'); // 3. Baru render navbar
+        
+        const user = Auth.getUser();
+        document.getElementById('dashboard-user-name').textContent = user.fullName;
+    });
+</script>
 </body>
 </html>
