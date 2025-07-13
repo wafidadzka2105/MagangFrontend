@@ -60,28 +60,24 @@
         </div>
     </main>
     
-    <script src="./assets/Auth.js" defer></script>
+  <script src="./assets/Auth.js" defer></script>
     <script src="./assets/Theme.js" defer></script>
     <script src="./assets/Utils.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // PANGGILAN INI HARUS ADA DI PALING ATAS
             Auth.checkAuth();
+            
+            // Kode lain dijalankan setelah pengecekan lolos
             Theme.init();
             Utils.renderNavbar('dashboard');
             
             const user = Auth.getUser();
             document.getElementById('dashboard-user-name').textContent = user.fullName;
 
-            // --- KODE BARU DITAMBAHKAN DI SINI ---
-            // Mengambil data karyawan dari local storage
             const employeesData = JSON.parse(localStorage.getItem('employees')) || [];
-            
-            // Menghitung jumlah karyawan
             const employeeCount = employeesData.length;
-            
-            // Memperbarui teks pada elemen dengan id 'total-karyawan'
             document.getElementById('total-karyawan').textContent = employeeCount;
-            // --- AKHIR DARI KODE BARU ---
         });
     </script>
 </body>
